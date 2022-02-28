@@ -1,0 +1,24 @@
+$primary: #1b139f;
+$secondary: #8c85fa;
+$active: black;
+$border-radius: 10rem;
+$border-width: 0;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": $danger,
+  "active": $active,
+);
+
+.element {
+  // Output calc(.25rem - 0) is invalid
+  border-radius: calc($border-radius - $border-width);
+}
+
+.element {
+  // Output .25rem
+  border-radius: subtract($border-radius, $border-width);
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
